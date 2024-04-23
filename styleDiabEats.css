@@ -1,0 +1,29 @@
+/* CSS untuk styling header dan navigasi */
+header {
+    background-color: white;
+    padding: 10px 0;
+    display: flex;
+    margin-left: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    margin-right: 35%; /* Menggeser navigasi ke sisi kanan */
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 100px; /* Atur ukuran logo sesuai kebutuhan */
+    height: 70px;
+    margin-right: auto; /* Menggeser logo ke sisi kiri */
+}
