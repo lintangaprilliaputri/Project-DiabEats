@@ -48,8 +48,8 @@
             "Selamat datang di DiabEats, sumber informasi terpercaya untuk pencegahan diabetes dan gaya hidup sehat". 
             Di sini Anda akan menemukan beragam artikel informatif tentang faktor risiko diabetes, termasuk pola makan yang sehat, aktivitas fisik, 
             dan kebiasaan hidup lainnya yang dapat memengaruhi kesehatan Anda. Kami juga menyajikan rekomendasi makanan sehat, dan tips untuk mengubah
-            gaya hidup Anda menjadi lebih aktif dan berenergi. Jangan biarkan diabetes mengendalikan hidup Anda. Dengan DiabEats, Anda dapat dengan 
-            mudah memesan makanan yang mendukung gaya hidup sehat. Ayo pesan sekarang!
+            gaya hidup Anda menjadi lebih aktif dan berenergi. Jangan biarkan diabetes mengendalikan hidup Anda. <br><br>Dengan DiabEats, Anda dapat dengan 
+            mudah memesan makanan yang mendukung gaya hidup sehat. <br><br>Ayo pesan sekarang!
         </p>
 
         <div class="main_btn">
@@ -303,36 +303,36 @@
             <form action="#">
 
                 <div class="input">
-                    <p>Name</p>
-                    <input type="text" placeholder="you name">
+                    <p>Nama</p>
+                    <input type="text" placeholder="Nama">
                 </div>
 
                 <div class="input">
                     <p>Email</p>
-                    <input type="email" placeholder="you email">
+                    <input type="email" placeholder="email">
                 </div>
 
                 <div class="input">
-                    <p>Number</p>
-                    <input placeholder="you number">
+                    <p>Nomor Telepon</p>
+                    <input placeholder="Nomor Telepon">
                 </div>
 
                 <div class="input">
-                    <p>How Much</p>
-                    <input type="number" placeholder="how many order">
+                    <p>Jumlah</p>
+                    <input type="number" placeholder="Jumlah pesan">
                 </div>
 
                 <div class="input">
-                    <p>You Order</p>
-                    <input placeholder="food name">
+                    <p>Pesanan</p>
+                    <input placeholder="Nama Pesanan">
                 </div>
 
                 <div class="input">
-                    <p>Address</p>
-                    <input placeholder="you Address">
+                    <p>Alamat</p>
+                    <input placeholder="Alamat">
                 </div>
 
-                <a href="#" class="order_btn">Order Now</a>
+                <a href="#" class="order_btn">Pesan Sekarang</a>
 
             </form>
 
@@ -478,7 +478,7 @@
                 <h2>Our Service</h2>
                 <p>Pengiriman Cepat</p>
                 <p>Pembayaran Mudah</p>
-                <p>Layanan 24 Jam</p>
+                <p>Layanan 12 Jam</p>
             </div>
 
             <div class="footer_tag">

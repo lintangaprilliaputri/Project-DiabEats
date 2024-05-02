@@ -113,7 +113,7 @@ section .main .main_image img{
 
 section p{
     width: 650px;
-    margin-top: -95px;
+    margin-top: -130px;
     text-align: justify;
     position: relative;
     left: 100px;
@@ -152,8 +152,8 @@ section .main_btn:hover img{
 
 .about{
     width: 100%;
-    padding: 90px 0;
-    background-image: url(image/1.png);
+    padding: 200px 0;
+    background-image: url(image/bg1000.png);
     background-size: cover;
     background-position: center;
 }
@@ -162,7 +162,7 @@ section .main_btn:hover img{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .about .about_main .image img{
@@ -353,8 +353,8 @@ section .main_btn:hover img{
 
 .article{
     width: 100%;
-    padding: 100px 0;
-    background-image: url(image/1.png);
+    padding: 150px 0;
+    background-image: url(image/bg1000.png);
     background-size: cover;
     background-position: center;
 }
@@ -505,10 +505,10 @@ section .main_btn:hover img{
 
 .review .review_box .review_card{
     width: 350px;
-    height: 535px;
+    height: 500px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     border-radius: 8px;
-    padding: 8px 20px;
+    padding: 15px 20px;
     margin: 0 8px;
 }
 
@@ -547,13 +547,14 @@ section .main_btn:hover img{
 }
 
 .review .review_box .review_card .review_text p{
+    margin-top: 30px;
     text-align: center;
     line-height: 22px;
     transition: 0.3s;
 }
 
 .review .review_box .review_card:hover .review_text p{
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 
