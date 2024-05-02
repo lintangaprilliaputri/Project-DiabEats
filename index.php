@@ -206,8 +206,6 @@
     </div>
 
 
-
-
     <!--Review-->
 
     <div class="review" id="Review">
@@ -221,30 +219,11 @@
                 </div>
 
                 <div class="review_text">
-                    <h2 class="name">John Deo</h2>
-
-                    <div class="review_icon">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-
-                    <div class="review_social">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
+                    <h2 class="name">Ernawati</h2>
 
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
-                        blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
-                        asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
-                        dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
-                        repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
-                        pariatur. Fuga aperiam impedit illo atque repellendus!
+                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
+                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -258,30 +237,10 @@
                 </div>
 
                 <div class="review_text">
-                    <h2 class="name">John Deo</h2>
-
-                    <div class="review_icon">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-
-                    <div class="review_social">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
-
+                    <h2 class="name">Margono</h2>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
-                        blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
-                        asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
-                        dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
-                        repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
-                        pariatur. Fuga aperiam impedit illo atque repellendus!
+                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
+                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -295,30 +254,11 @@
                 </div>
 
                 <div class="review_text">
-                    <h2 class="name">John Deo</h2>
-
-                    <div class="review_icon">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-
-                    <div class="review_social">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
+                    <h2 class="name">Dita</h2>
 
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
-                        blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
-                        asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
-                        dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
-                        repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
-                        pariatur. Fuga aperiam impedit illo atque repellendus!
+                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
+                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -332,30 +272,11 @@
                 </div>
 
                 <div class="review_text">
-                    <h2 class="name">John Deo</h2>
-
-                    <div class="review_icon">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-
-                    <div class="review_social">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
+                    <h2 class="name">Dimas</h2>
 
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
-                        blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
-                        asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
-                        dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
-                        repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
-                        pariatur. Fuga aperiam impedit illo atque repellendus!
+                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
+                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -538,26 +459,26 @@
 
             <div class="footer_tag">
                 <h2>Quick Link</h2>
-                <p>Home</p>
-                <p>About</p>
+                <p>Beranda</p>
+                <p>Tentang</p>
                 <p>Menu</p>
-                <p>Gallary</p>
-                <p>Order</p>
+                <p>Artikel</p>
+                <p>Review</p>
+                <p>Pesan</p>
             </div>
 
             <div class="footer_tag">
                 <h2>Contact</h2>
-                <p>+94 12 3456 789</p>
-                <p>+94 25 5568456</p>
-                <p>johndeo123@gmail.com</p>
-                <p>foodshop123@gmail.com</p>
+                <p>+6281357188845</p>
+                <p>diabeats@gmail.com</p>
+                <p>bilqisbillah@gmail.com</p>
             </div>
 
             <div class="footer_tag">
                 <h2>Our Service</h2>
-                <p>Fast Delivery</p>
-                <p>Easy Payments</p>
-                <p>24 x 7 Service</p>
+                <p>Pengiriman Cepat</p>
+                <p>Pembayaran Mudah</p>
+                <p>Layanan 24 Jam</p>
             </div>
 
             <div class="footer_tag">
@@ -570,12 +491,11 @@
 
         </div>
 
-        <p class="end">Design by<span><i class="fa-solid fa-face-grin"></i> nopall</span></p>
+        <p class="end">Hak Cipta<span> kelompok 8</span></p>
 
     </footer>
 
 
 
-    
 </body>
 </html>
