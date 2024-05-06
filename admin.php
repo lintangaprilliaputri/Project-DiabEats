@@ -20,7 +20,7 @@
                 <li><a href="#Pesanan">Pesanan</a></li>
                 <li><a href="#Stok">Stok Produk</a></li>
                 <li><a href="#Laporan">Laporan</a></li>
-                <li><a href="logout.php">Logout</a></li>                
+                <li><a href="keluarAkun.php">Logout</a></li>                
             </ul>
 
             <div class="icon">
@@ -35,7 +35,7 @@
     if (!isset($_SESSION['user'])) {
         
         // Menuju index.php
-        header("location:login.php");
+        header("location:masukAkun.php");
         exit;
     }
     ?>
