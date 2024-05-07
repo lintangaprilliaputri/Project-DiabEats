@@ -1,3 +1,36 @@
+<?php
+include_once ("koneksi.php");
+$query= "SELECT * FROM tb_akun ";
+$hasil= mysqli_query($conn, $query);
+
+if (isset($_POST['submit'])) {
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $no_telepon = $_POST['no_telepon'];
+    $alamat = $_POST['alamat'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $cek_user = mysqli_query($conn, "SELECT * FROM tb_akun WHERE username = '$username'");
+    $cek_login = mysqli_num_rows($cek_user);
+
+    if($cek_login > 0) {
+        echo "<script>
+        alert('Username Telah Terdaftar');
+        window.location = 'masukAkun.php';
+        </script>";
+    }
+    else {
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            mysqli_query($conn, "INSERT INTO tb_akun VALUES('', '$nama', '$email', '$no_telepon', '$alamat', '$username', '$password')");
+            echo "<script>
+            alert('Akun Berhasil Dibuat!');
+            window.location = 'masukAkun.php';
+            </script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,40 +143,40 @@
         <div class="input-box">
             <div class="input-field">
                 <span class="details">Nama Lengkap</span>
-                <input type="text" placeholder="Masukkan nama lengkap" required>
+                <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
             </div>
 
             <div class="input-field">
             <span class="details">Email</span>
-                <input type="email" placeholder="Masukkan email" required>
+                <input type="email" name="email" placeholder="Masukkan email" required>
             </div>
         </div>
 
         <div class="input-box">
             <div class="input-field">
             <span class="details">Nomor Telepon</span>
-                <input type="number" placeholder="Masukkan nomor telepon" required>
+                <input type="text" name="no_telepon" placeholder="Masukkan nomor telepon" required>
             </div>
 
             <div class="input-field">
             <span class="details">Alamat</span>
-                <input type="text" placeholder="Masukkan alamat lengkap" required>
+                <input type="text" name="alamat" placeholder="Masukkan alamat lengkap" required>
             </div>
         </div>
 
         <div class="input-box">
             <div class="input-field">
             <span class="details">Username</span>
-                <input type="text" placeholder="Masukkan username" required>
+                <input type="text" name="username" placeholder="Masukkan username" required>
             </div>
 
             <div class="input-field">
             <span class="details">Password</span>
-                <input type="password" placeholder="Masukkan password" required>
+                <input type="password" name="password" placeholder="Masukkan password" required>
             </div>
         </div>
 
-        <button type="submit" class="btn">Daftar</button>
+        <button type="submit" name="submit" class="btn">Daftar</button>
 
         <div class="login-link">
                 <p>Sudah memiliki akun?

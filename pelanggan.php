@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    // Apabila langsung mengakses admin.php tanpa login, maka akan diarahkan ke index.php untuk login terlebih dahulu
+    if (!isset($_SESSION['login'])) {
+        
+        // Menuju index.php
+        header("location:masukAkun.php");
+        exit;
+    }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +19,7 @@
     <link rel="stylesheet" href="stylePelanggan.css">
 
 </head>
-<body>
-    <?php
-    session_start();
-    // Apabila langsung mengakses admin.php tanpa login, maka akan diarahkan ke index.php untuk login terlebih dahulu
-    if (!isset($_SESSION['user'])) {
-        
-        // Menuju index.php
-        header("location:masukAkun.php");
-        exit;
-    }
-    ?>
-    
+<body>    
     <section id="Home">
         <nav>
             <div class="logo">

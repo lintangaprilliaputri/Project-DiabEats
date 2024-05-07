@@ -1,3 +1,43 @@
+<?php
+include_once ("koneksi.php");
+session_start();
+
+if(isset($_POST['submit'])) {
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
+
+    $cek_user = mysqli_query($conn, "SELECT * FROM tb_akun WHERE username = '$user'");
+        
+    if(mysqli_num_rows($cek_user)=== 1) {
+        $data = mysqli_fetch_assoc($cek_user);
+            
+        if (password_verify($pass, $data['password'])) {
+            $_SESSION['login'] = $data['username'];
+            if ($data['username'] === "admin01" || $data['username'] === "admin02") {
+                header("location: admin.php");
+                exit();
+            } else {
+                // Pengguna bukan admin, arahkan ke halaman index.php
+                header("location: pelanggan.php");
+                exit();
+            }
+        }else {
+            // Kata sandi tidak cocok
+            echo "<script>
+                alert('Username atau Password salah!');
+                window.location = 'masukAkun.php';
+            </script>";
+            exit();
+        }
+    }else {
+        echo "<script>
+            alert('Username tidak ditemukan!');
+            window.location = 'masukAkun.php';
+        </script>";
+        exit();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,20 +160,20 @@
         <form action="" method="post">
             <div class="input-box">
             <span class="details">Username</span>
-                <input type="text" placeholder="Masukkan username" required name="User">
+                <input type="text" name="user" placeholder="Masukkan username" required name="User">
             </div>
 
             <div class="input-box">
             <span class="details">Password</span>
-                <input type="password" placeholder="Masukkan password" required name="Pass">
+                <input type="password" name="pass" placeholder="Masukkan password" required name="Pass">
             </div>
 
             <div class="remember-forgot">
                 <label><input type="checkbox"> Ingatkan saya</label> 
-                <a href="#">Lupa Kata Sandi?</a>
+                <a href="keluarAkun.php">Lupa Kata Sandi?</a>
             </div>
 
-            <button type="submit" class="btn">Masuk</button>
+            <button type="submit" name="submit" class="btn">Masuk</button>
 
             <div class="register-link">
                 <p>Belum memiliki akun?
@@ -141,35 +181,6 @@
             </div>
         </form>
     </div>
-    <?php
-        session_start();
-        $user = 'bils';
-        $pw = 'bils';
-        
-        // Apabila telah login namun admin ingin kembali ke index.php tanpa logout, maka akses tidak dapat diakses, admin harus melakukan logout terlebih dahulu
-        if (isset($_SESSION['user'])) {
-            header("location:pelanggan.php");
-            exit;
-        }
-
-        if (isset($_POST['User']) && isset($_POST['Pass'])) {
-            $U = trim($_POST['User']);
-            $P = trim($_POST['Pass']);
-
-            $_SESSION['user'] = $_POST['User'];
-            if ( ($U === $user) && ($P === $pw) ) {
-                // Set Session Login
-                $_SESSION['user'] = $_POST['User'];
-
-                //Apabila login berhasil, maka diarahkan ke admin.php
-                header("location:pelanggan.php");?>
-                <?php
-                } else {
-                    echo 'user/password Tidak Sesuai';
-                    return false;
-                }
-            }   
-        ?>
 
 </body>
 </html>
