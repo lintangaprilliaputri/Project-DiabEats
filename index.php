@@ -53,7 +53,7 @@
         </p>
 
         <div class="main_btn">
-            <a href="#">Pesan Sekarang</a>
+            <a href="masukAkun.php">Pesan Sekarang</a>
             <img src="image/panah kanan.png">
         </div>
 
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <div class="menu_btn">
-                <a href="#">Lihat Selengkapnya</a>
+                <a href="masukAkun.php">Lihat Selengkapnya</a>
                 <img src="image/panah kanan.png">
             </div> 
         </div>
@@ -198,7 +198,7 @@
                 </p>
             </div>
             <div class="article_btn">
-                <a href="#">Baca Selengkapnya</a>
+                <a href="masukAkun.php">Baca Selengkapnya</a>
                 <img src="image/panah kanan.png">
             </div> 
         </div>
@@ -332,7 +332,7 @@
                     <input placeholder="Alamat">
                 </div>
 
-                <a href="#" class="order_btn">Pesan Sekarang</a>
+                <a href="masukAkun.php" class="order_btn">Pesan Sekarang</a>
 
             </form>
 

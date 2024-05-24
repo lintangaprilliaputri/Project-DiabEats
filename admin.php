@@ -25,6 +25,7 @@ if (isset($_SESSION['login'])) {
     header("location:masukAkun.php");
     exit; // Keluar dari skrip
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -46,8 +47,8 @@ if (isset($_SESSION['login'])) {
             <ul>
                 <li><a href="#Home">Beranda</a></li>
                 <li><a href="#Pesanan">Pesanan</a></li>
-                <li><a href="#Stok">Stok Produk</a></li>
-                <li><a href="#Laporan">Laporan</a></li>
+                <li><a href="StokProduk.php">Stok Produk</a></li>
+                <li><a href="laporanAdmin.php">Laporan</a></li>
                 <li><a href="keluarAkun.php">Logout</a></li>                
             </ul>
             <div class="icon">

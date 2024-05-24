@@ -1,13 +1,32 @@
 <?php
-    session_start();
-    // Apabila langsung mengakses admin.php tanpa login, maka akan diarahkan ke index.php untuk login terlebih dahulu
-    if (!isset($_SESSION['nama'])) {
-        
-        // Menuju index.php
-        header("location:masukAkun.php");
-        exit;
+include_once ("koneksi.php");
+session_start();
+$nama_pengguna = "";
+
+// Apabila langsung mengakses owner.php tanpa login, maka akan diarahkan ke login.php untuk login terlebih dahulu
+if (isset($_SESSION['login'])) {
+    // Jika pengguna sudah login, dapatkan nama pengguna dari $_SESSION['nama']
+    $username = $_SESSION['login'];
+    // Lakukan query SQL untuk mendapatkan nama dari pengguna dengan username yang sesuai
+    $query = "SELECT nama FROM tb_akun WHERE username = '$username'";
+    $hasil = mysqli_query($conn, $query);
+
+    // Periksa apakah query berhasil dieksekusi
+    if ($hasil) {
+        // Ambil hasil query
+        $row = mysqli_fetch_assoc($hasil);
+        $nama_pengguna = $row['nama'];
+    } else {
+        // Jika query gagal, tampilkan pesan error
+        echo "Error: " . mysqli_error($conn);
     }
-    ?>
+} else {
+    // Menuju login.php jika pengguna belum login
+    header("location:masukAkun.php");
+    exit; // Keluar dari skrip
+}
+
+?>
     
 <!DOCTYPE html>
 <html lang="en">

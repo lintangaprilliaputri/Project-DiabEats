@@ -38,7 +38,6 @@
                 <img src="image/Shop.png">
                 <a href="Login.php"><img src="image/Profil.png"></a>
             </div>
-
         </nav>
 
         <div class="main">
