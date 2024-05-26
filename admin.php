@@ -53,7 +53,7 @@ if (isset($_SESSION['login'])) {
             </ul>
             <div class="icon">
                 <img src="image/Pesan.png">
-                <img src="image/Profil.png">
+                <img src="image/Profil.png"> 
             </div>
         </nav>
         <div class="main">

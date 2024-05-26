@@ -1,6 +1,6 @@
 <?php
 include_once ("koneksi.php");
-$query = "SELECT * FROM tb_stokbarang";
+$query = "SELECT * FROM tb_stokproduk";
 $hasil = mysqli_query($conn, $query);
 ?>
 
@@ -173,7 +173,6 @@ $hasil = mysqli_query($conn, $query);
                     <th scope="col">No.</th>
                     <th scope="col">ID Produk</th>
                     <th scope="col">Nama Produk</th>
-                    <th scope="col">Kategori</th>
                     <th scope="col">Harga</th>
                     <th scope="col">Stok</th>
                     <th scope="col">Satuan</th>
@@ -185,15 +184,14 @@ $hasil = mysqli_query($conn, $query);
                 while ($data = mysqli_fetch_array($hasil)) { ?>
                     <tr>
                         <th scope="row"><?php echo $nomor; ?></th>
-                        <td><?php echo $data['id_produk']; ?></td>
-                        <td><?php echo $data['nama_produk']; ?></td>
-                        <td><?php echo $data['kategori']; ?></td>
-                        <td><?php echo $data['harga_produk']; ?></td>
+                        <td><?php echo $data['idbarang']; ?></td>
+                        <td><?php echo $data['nama']; ?></td>
+                        <td><?php echo $data['harga']; ?></td>
                         <td><?php echo $data['stok']; ?></td>
                         <td><?php echo $data['satuan']; ?></td>
                         <td>
-                            <a href="ubahproduk.php?id=<?php echo $data['id_produk']; ?>">Edit</a> |
-                            <a href="hapusProduk.php?id=<?php echo $data['id_produk']; ?>">Delete</a>
+                            <a href="ubahproduk.php?id=<?php echo $data['idbarang']; ?>">Edit</a> |
+                            <a href="hapusProduk.php?id=<?php echo $data['idbarang']; ?>">Delete</a>
                         </td>
                     </tr>
                 <?php $nomor++;

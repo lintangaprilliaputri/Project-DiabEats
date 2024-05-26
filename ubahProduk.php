@@ -1,7 +1,7 @@
 <?php
 include_once("koneksi.php");
 $id=$_GET['id'];
-$query="SELECT * FROM tb_stokbarang WHERE id_produk=" . $id;
+$query="SELECT * FROM tb_stokproduk WHERE idbarang=" . $id;
 $hasil=mysqli_query($conn,$query);
 ?>
 
@@ -20,29 +20,17 @@ $hasil=mysqli_query($conn,$query);
         <h2>DATA PRODUK</h2>
     </div>
     <h1 class="ml-5">Tambah Produk</h1>
-    <form method="post" action="prosestambahlagu.php" class="ml-5">
+    <form method="post" action="prosestambahproduk.php" class="ml-5">
     <div class="form-group row">
-        <label for="id_produk" class="col-sm-1 col-form-label">ID Produk</label>
+        <label for="nama" class="col-sm-1 col-form-label">Nama Produk</label>
         <div class="col-sm-3">
-            <input type="text" name="id_produk" class="form-control" placeholder="ID Produk">
+            <input type="text" name="nama" class="form-control" placeholder="Nama Produk">
         </div>
     </div>
     <div class="form-group row">
-        <label for="nama_produk" class="col-sm-1 col-form-label">Nama Produk</label>
+        <label for="harga" class="col-sm-1 col-form-label">Harga</label>
         <div class="col-sm-3">
-            <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="kategori" class="col-sm-1 col-form-label">Kategori</label>
-        <div class="col-sm-3">
-            <input type="text" name="kategori" class="form-control" placeholder="Kategori">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="harga_produk" class="col-sm-1 col-form-label">Harga</label>
-        <div class="col-sm-3">
-            <input type="number" name="harga_produk" class="form-control" placeholder="Harga Produk">
+            <input type="number" name="harga" class="form-control" placeholder="Harga Produk">
         </div>
     </div>
     <div class="form-group row">
