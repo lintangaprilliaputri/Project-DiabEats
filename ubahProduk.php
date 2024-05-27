@@ -19,35 +19,38 @@ $hasil=mysqli_query($conn,$query);
 <div class="alert alert-info text-center" role="alert" > 
         <h2>DATA PRODUK</h2>
     </div>
-    <h1 class="ml-5">Tambah Produk</h1>
-    <form method="post" action="prosestambahproduk.php" class="ml-5">
+    <h1 class="ml-5">Ubah Produk</h1>
+    <form method="post" action="prosesubahproduk.php" class="ml-5">
+    <?php while ($data=mysqli_fetch_array($hasil)) { ?>
+    <input type="hidden" name="id" value="<?php echo $id ?>">
     <div class="form-group row">
         <label for="nama" class="col-sm-1 col-form-label">Nama Produk</label>
         <div class="col-sm-3">
-            <input type="text" name="nama" class="form-control" placeholder="Nama Produk">
+            <input type="text" name="nama" class="form-control" value="<?php echo $data['nama'] ?>">
         </div>
     </div>
     <div class="form-group row">
         <label for="harga" class="col-sm-1 col-form-label">Harga</label>
         <div class="col-sm-3">
-            <input type="number" name="harga" class="form-control" placeholder="Harga Produk">
+            <input type="number" name="harga" class="form-control" value="<?php echo $data['harga'] ?>">
         </div>
     </div>
     <div class="form-group row">
         <label for="stok" class="col-sm-1 col-form-label">Stok</label>
         <div class="col-sm-3">
-            <input type="number" name="stok" class="form-control" placeholder="Stok">
+            <input type="number" name="stok" class="form-control" value="<?php echo $data['stok'] ?>">
         </div>
     </div>
     <div class="form-group row">
         <label for="satuan" class="col-sm-1 col-form-label">Satuan</label>
         <div class="col-sm-3">
-            <input type="text" name="satuan" class="form-control" placeholder="Satuan">
+            <input type="text" name="satuan" class="form-control" value="<?php echo $data['satuan'] ?>">
         </div>
     </div>
     <button type="submit" class="btn btn-primary mb-1 mt-1 ml-0mr-0" >Kirim</button>
     <a href="stokproduk.php" class="btn btn-primary mb-1 mt-1 ml-0"><i class="fas fa-user-plus mr-0"></i>Kembali</a>
     </form>
+    <?php } ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
