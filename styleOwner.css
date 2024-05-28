@@ -72,7 +72,7 @@ section nav .img {
 
 section nav .icon img {
     margin-left: 20px;
-    width: 30px;
+    width: 20px;
 }
 
 section nav .icon i{
@@ -85,4 +85,63 @@ section nav .icon i{
 
 section nav .icon i:hover{
     color: #bd0505;
+}
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    width: 150px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+.sub-menu {
+    border: 2px solid #BD0505;
+    border-radius: 5px;
+    background:#ffffff ;
+    padding: 10px;
+}
+
+.sub-menu h3 {
+    font-size: 12pt;
+    display: flex;
+    align-items: center;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #303030 ;
+    margin: 10px 0;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #BD0505;
+    margin: 12px 0;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link span {
+    font-size: 10px;
+    transform: 0.5s;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
 }

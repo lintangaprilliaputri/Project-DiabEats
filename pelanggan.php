@@ -35,8 +35,21 @@
             </ul>
 
             <div class="icon">
+            <img src="image/Profil.png" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <a href="#" class="sub-menu-link">
+                            <h3>Edit Profil</h3>
+                            <span>></span>
+                        </a>
+                        <hr>
+                        <a href="keluarAkun.php" class="sub-menu-link">
+                            <h3>Keluar</h3>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
                 <img src="image/Shop.png">
-                <a href="Login.php"><img src="image/Profil.png"></a>
             </div>
         </nav>
 

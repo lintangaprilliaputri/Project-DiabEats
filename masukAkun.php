@@ -16,8 +16,12 @@ if(isset($_POST['submit'])) {
             if ($data['username'] === "admin01" || $data['username'] === "admin02") {
                 header("location: admin.php");
                 exit();
+            } if ($data['username'] === "owner") {
+                // user bukan admin, diarahkan ke halaman owner
+                header("location: owner.php");
+                exit();
             } else {
-                // Pengguna bukan admin, arahkan ke halaman index.php
+                // user bukan admin, arahkan ke halaman pelanggan
                 header("location: pelanggan.php");
                 exit();
             }
@@ -44,7 +48,6 @@ if(isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masuk Akun</title>
-    <link rel="stylesheet" href="styleLogin.css">
     <style> 
         * {
         margin: 0;
@@ -69,6 +72,10 @@ if(isset($_POST['submit'])) {
             color: #fff;
             border-radius: 10px;
             padding: 30px 40px;
+        }
+
+        .wrapper img {
+            height: 20px;
         }
 
         .wrapper h1 {
@@ -156,6 +163,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
     <div class="wrapper">
+        <a href="index.php"><img src="image/back.png"></a>
         <h1>Masuk Akun</h1>
         <form action="" method="post">
             <div class="input-box">

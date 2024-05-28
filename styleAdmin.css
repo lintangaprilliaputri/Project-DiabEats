@@ -78,19 +78,22 @@ section nav ul li a:hover {
 
 section nav .icon img {
     margin-left: 20px;
-    width: 30px;
+    width: 20px;
 }
 
 section .main {
     display: flex;
     flex: 1; /* Take the remaining height */
-    justify-content: center;
     align-items: center;
     flex-direction: column; /* Arrange children in a column */
     text-align: center; /* Center text */
 }
 
 section .main h1 {
-    font-size: 30px;
+    font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position: fixed; /* Posisi tetap relatif terhadap jendela browser */
+    left: 40%; /* Jarak dari kiri */
+    top: 100px; /* Jarak dari bawah navigasi */
 }
+

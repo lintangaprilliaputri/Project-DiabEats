@@ -26,10 +26,17 @@
             </ul>
 
             <div class="icon">
-                <img src="image/Shop.png">
-                <a href="masukAkun.php"><img src="image/Profil.png"></a>
+                <img src="image/shop.png">
+                <img src="image/Profil.png" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <a href="masukAkun.php" class="sub-menu-link">
+                            <h3>Masuk Akun</h3>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
             </div>
-
         </nav>
 
         <div class="main">
@@ -494,8 +501,12 @@
         <p class="end">Hak Cipta<span> kelompok 8</span></p>
 
     </footer>
+    <script>
+        let subMenu = document.getElementById("subMenu");
 
-
-
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
 </body>
 </html>

@@ -74,7 +74,7 @@
         }
 
         nav .icon img {
-            width: 30px;
+            width: 20px;
             margin-left: 20px;
         }
 
@@ -104,7 +104,7 @@
         </div>
     </nav>
     <div class="container">
-        <h2>Halaman Laporan</h2>
+        <h2>Laporan Pesanan Masuk</h2>
         <p>Konten untuk mengelola laporan akan ditampilkan di sini.</p>
     </div>
 </body>

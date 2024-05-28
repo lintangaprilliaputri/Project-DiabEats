@@ -52,8 +52,8 @@ if (isset($_SESSION['login'])) {
                 <li><a href="keluarAkun.php">Logout</a></li>                
             </ul>
             <div class="icon">
-                <img src="image/Pesan.png">
-                <img src="image/Profil.png"> 
+                <img src="image/pesan.png">
+                <img src="image/profil.png"> 
             </div>
         </nav>
         <div class="main">

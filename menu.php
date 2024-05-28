@@ -270,6 +270,7 @@
                     </p>
                     <h3>Rp 45.000</h3>
                 </div>
+
                 <div class="menu_btn">
                     <a href="#">Masukkan Keranjang</a>
                 </div>
@@ -288,8 +289,9 @@
                     </p>
                     <h3>Rp 25.000</h3>
                 </div>
+
                 <div class="menu_btn">
-                <a href="#">Pesan</a>
+                    <a href="#">Masukkan Keranjang</a>
                 </div>
             </div> 
 
@@ -307,6 +309,9 @@
                     <h3>Rp 20.000</h3>
                 </div>
 
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
+                </div>
             </div> 
 
             <div class="menu_card">
@@ -322,6 +327,10 @@
                     </p>
                     <h3>Rp 40.000</h3>
                 </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
+                </div>
             </div>
             
             <div class="menu_card">
@@ -333,9 +342,13 @@
                 <div class="menu_info">
                     <h2>Bubur Kacang Merah</h2>
                     <p>
-                        Sayur lodeh dengan kentang rebus serta bubur kacang merah
+                        Bubur dengan bahan dasar kacang merah
                     </p>
                     <h3>Rp 10.000</h3>
+                </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
                 </div>
             </div>
 
@@ -352,6 +365,10 @@
                     </p>
                     <h3>Rp 7.000</h3>
                 </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
+                </div>
             </div>
 
             <div class="menu_card">
@@ -366,6 +383,10 @@
                         Sayur lodeh dengan kentang rebus serta bubur kacang merah
                     </p>
                     <h3>Rp 12.000</h3>
+                </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
                 </div>
             </div>
 
@@ -382,6 +403,10 @@
                     </p>
                     <h3>Rp 50.000</h3>
                 </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
+                </div>
             </div>
 
             <div class="menu_card">
@@ -396,6 +421,10 @@
                         Sayur lodeh dengan kentang rebus serta bubur kacang merah
                     </p>
                     <h3>Rp 40.000</h3>
+                </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
                 </div>
             </div>
 
@@ -412,6 +441,10 @@
                     </p>
                     <h3>Rp 40.000</h3>
                 </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
+                </div>
             </div>
 
             <div class="menu_card">
@@ -427,6 +460,10 @@
                     </p>
                     <h3>Rp 40.000</h3>
                 </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
+                </div>
             </div>
 
             <div class="menu_card">
@@ -441,6 +478,10 @@
                         Sayur lodeh dengan kentang rebus serta bubur kacang merah
                     </p>
                     <h3>Rp 40.000</h3>
+                </div>
+
+                <div class="menu_btn">
+                    <a href="#">Masukkan Keranjang</a>
                 </div>
             </div>
         </div>

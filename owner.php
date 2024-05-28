@@ -53,8 +53,14 @@ if (isset($_SESSION['login'])) {
             </ul>
 
             <div class="icon">
-                <img src="image/Profil.png">
-                
+                <img src="image/Profil.png" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <a href="#" class="sub-menu-link">
+                            <h3>Keluar</h3>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </nav>
-    
