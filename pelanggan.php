@@ -31,14 +31,15 @@
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="artikel.php">Artikel</a></li>
                 <li><a href="review.php">Review</a></li>
-                <li><a href="keluarAkun.php">Logout</a></li>   
+                <li><a href="keluarAkun.php">Keluar</a></li>
             </ul>
 
             <div class="icon">
+            <img src="image/Shop.png">
             <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="#" class="sub-menu-link">
+                        <a href="editProfil.php" class="sub-menu-link">
                             <h3>Edit Profil</h3>
                             <span>></span>
                         </a>
@@ -49,7 +50,6 @@
                         </a>
                     </div>
                 </div>
-                <img src="image/Shop.png">
             </div>
         </nav>
 

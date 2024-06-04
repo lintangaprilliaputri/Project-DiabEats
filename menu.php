@@ -181,16 +181,16 @@
         }
 
         .menu .menu_box .menu_card .menu_info h2{
-            width: 60%;
+            width: 80%;
             text-align: center;
-            margin: 50px auto 10px auto;
+            margin: 35px auto 10px auto;
             font-size: 25px;
             color: #bd0505;
         }
 
         .menu .menu_box .menu_card .menu_info p{
             text-align: center;
-            margin-top: 8px;
+            margin: 8px 10px 15px 10px;
             line-height: 21px;
         }
 
@@ -227,6 +227,65 @@
             transform: scale(1.2);
         }
 
+        .sub-menu-wrap{
+            position: absolute;
+            top: 100%;
+            right: 5%;
+            width: 150px;
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+
+        .sub-menu-wrap.open-menu{
+            max-height: 400px;
+        }
+        .sub-menu {
+            border: 2px solid #BD0505;
+            border-radius: 5px;
+            background:#ffffff ;
+            padding: 10px;
+        }
+
+        .sub-menu h3 {
+            font-size: 12pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .sub-menu hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background: #303030 ;
+            margin: 10px 0;
+        }
+
+        .sub-menu-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #BD0505;
+            margin: 12px 0;
+        }
+
+        .sub-menu-link p{
+            width: 100%;
+        }
+
+        .sub-menu-link span {
+            font-size: 10px;
+            transform: 0.5s;
+        }
+
+        .sub-menu-link:hover span {
+            transform: translateX(5px);
+        }
+
+        .sub-menu-link:hover p {
+            font-weight: 600;
+        }
+
     </style>
 </head>
 
@@ -246,10 +305,22 @@
             </ul>
 
             <div class="icon">
-                <img src="image/Shop.png">
-                <a href="Login.php"><img src="image/Profil.png"></a>
+            <img src="image/Shop.png">
+            <img src="image/profil.png" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <a href="editProfil.php" class="sub-menu-link">
+                            <h3>Edit Profil</h3>
+                            <span>></span>
+                        </a>
+                        <hr>
+                        <a href="keluarAkun.php" class="sub-menu-link">
+                            <h3>Keluar</h3>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
             </div>
-
         </nav>
     </section>
 
@@ -342,7 +413,7 @@
                 <div class="menu_info">
                     <h2>Bubur Kacang Merah</h2>
                     <p>
-                        Bubur dengan bahan dasar kacang merah
+                        Bubur dengan bahan dasar kacang merah tinggi serat
                     </p>
                     <h3>Rp 10.000</h3>
                 </div>
@@ -361,7 +432,7 @@
                 <div class="menu_info">
                     <h2>Pudding Jagung </h2>
                     <p>
-                        Bubur kacang merah yang banyak mengandung
+                        Pudding jagung rendah kandungan glikemik
                     </p>
                     <h3>Rp 7.000</h3>
                 </div>
@@ -378,9 +449,9 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Yogurt Berry</h2>
+                    <h2>Yogurt berry</h2>
                     <p>
-                        Sayur lodeh dengan kentang rebus serta bubur kacang merah
+                        Yogurt dengan topping strawberry dan blueberry
                     </p>
                     <h3>Rp 12.000</h3>
                 </div>
@@ -397,9 +468,9 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Susu Rendah Lemak</h2>
+                    <h2>Susu</h2>
                     <p>
-                        Sayur lodeh dengan kentang rebus serta bubur kacang merah
+                        Susu dengan kandungan lemak yang rendah
                     </p>
                     <h3>Rp 50.000</h3>
                 </div>
@@ -416,9 +487,9 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Paket 6</h2>
+                    <h2>Kombucha</h2>
                     <p>
-                        Sayur lodeh dengan kentang rebus serta bubur kacang merah
+                        Teh fermentasi yang mengandung berbagai zat baik
                     </p>
                     <h3>Rp 40.000</h3>
                 </div>
@@ -435,9 +506,9 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Paket 6</h2>
+                    <h2>Infused Water</h2>
                     <p>
-                        Sayur lodeh dengan kentang rebus serta bubur kacang merah
+                        Air mineral dengan rendaman buah, sayur, atau rempah-rempah 
                     </p>
                     <h3>Rp 40.000</h3>
                 </div>
@@ -454,9 +525,9 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Paket 6</h2>
+                    <h2>Jus Apel </h2>
                     <p>
-                        Sayur lodeh dengan kentang rebus serta bubur kacang merah
+                        Jus apel yang mengandung beberapa antioksidan
                     </p>
                     <h3>Rp 40.000</h3>
                 </div>
@@ -473,9 +544,9 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Paket 6</h2>
+                    <h2>Smoothies</h2>
                     <p>
-                        Sayur lodeh dengan kentang rebus serta bubur kacang merah
+                        Smoothies dengan kandungan bayam dan apel
                     </p>
                     <h3>Rp 40.000</h3>
                 </div>

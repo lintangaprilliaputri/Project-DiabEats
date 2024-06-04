@@ -9,10 +9,11 @@ $hasil = mysqli_query($conn, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"href="bootstrap\css\bootstrap.css">
     <title>Admin - Stok Makanan Sehat</title>
     <style>
-/* CSS */
-* {
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -80,66 +81,8 @@ $hasil = mysqli_query($conn, $query);
         }
 
         nav .icon img {
-            width: 30px;
+            width: 20px;
             margin-left: 20px;
-        }
-
-        .container {
-            width: 80%;
-            margin: 40px auto 10px auto; /* memberikan margin atas dan bawah sebesar 50px dan 10px */
-            overflow: hidden; /*mengatur tata letak dan tampilan elemen yang terkandung di dalam kontainer */
-        }
-
-        .alert {
-            padding: 15px;
-            background-color: #f9edbe;
-            border: 1px solid #f0c36d;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #d9534f;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            margin: 10px 0;
-        }
-
-        .btn:hover {
-            background-color: #c9302c;
-        }
-
-        .table {
-            width: 100%;
-            margin: 10px 0;
-            border-collapse: collapse;
-        }
-
-        .table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
         }
     </style>
 </head>
@@ -162,12 +105,13 @@ $hasil = mysqli_query($conn, $query);
         </div>
     </nav>
 
-    <div class="container">
-        <div class="alert">
-            <h2>DATA STOK PRODUK DIABEATS</h2>
-        </div>
-        <a href="tambahproduk.php" class="btn"><i class="fas fa-user-plus mr-2"></i>Tambah Produk</a>
-        <table class="table table-bordered">
+    <div class="card-body p-5">
+        <div class="alert alert-danger text-center" role="alert">
+        <h3>DATA STOK PRODUK DIABEATS </h3>
+	</div>
+        <a href="tambahproduk.php" class="btn btn-primary mb-1mt-1">Tambah Produk</a>
+        <a href="stokprodukPDF.php" target="_blank" class="btn btn-success"> PRINT</a>
+        <br><table class="table table-striped"><br>
             <thead class="thead-light">
                 <tr>
                     <th scope="col">No.</th>
@@ -198,6 +142,6 @@ $hasil = mysqli_query($conn, $query);
                 } ?>
             </tbody>
         </table>
-    </div>
+        
 </body>
 </html>
