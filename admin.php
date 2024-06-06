@@ -53,13 +53,27 @@ if (isset($_SESSION['login'])) {
             </ul>
             <div class="icon">
                 <img src="image/pesan.png">
-                <img src="image/profil.png"> 
+                <img src="image/Profil.png" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <a href="keluarAkun.php" class="sub-menu-link">
+                            <h3>Keluar</h3>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="main">
             <h1>Selamat Datang <?php echo $nama_pengguna; ?></h1>
         </div>
     </section>
-
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
 </body>
 </html>

@@ -309,11 +309,6 @@
             <img src="image/profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="editProfil.php" class="sub-menu-link">
-                            <h3>Edit Profil</h3>
-                            <span>></span>
-                        </a>
-                        <hr>
                         <a href="keluarAkun.php" class="sub-menu-link">
                             <h3>Keluar</h3>
                             <span>></span>
@@ -557,5 +552,11 @@
             </div>
         </div>
     </div>
+    <script>
+        let subMenu = document.getElementById("subMenu");
 
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
 </body>

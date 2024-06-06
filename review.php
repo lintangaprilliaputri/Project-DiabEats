@@ -229,7 +229,6 @@
             font-weight: 600;
         }
 
-
     </style>
 </head>
 <body>
@@ -251,11 +250,6 @@
                 <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="editProfil.php" class="sub-menu-link">
-                            <h3>Edit Profil</h3>
-                            <span>></span>
-                        </a>
-                        <hr>
                         <a href="keluarAkun.php" class="sub-menu-link">
                             <h3>Keluar</h3>
                             <span>></span>
@@ -299,8 +293,8 @@
                 <div class="review_text">
                     <h2 class="name">Margono</h2>
                     <p>
-                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
-                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
+                        Saya telah memesan dan mencoba paket 1 di DiabEats dan makanan yang saya beli ternyata rasanya enak. 
+                        Kedepannya mungkin saya akan berlangganan. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -317,8 +311,8 @@
                     <h2 class="name">Dita</h2>
 
                     <p>
-                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
-                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
+                        Paket yang saya beli yaitu paket 3 rasanya enak dan tidak hambar. 
+                        Mungkin saya akan mencoba paket atau menu lain. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -335,8 +329,8 @@
                     <h2 class="name">Dimas</h2>
 
                     <p>
-                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
-                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
+                        DiabEats ini menunya lumayan bervariasi jadi pembeli dapat mencoba menu berbeda tiap harinya.
+                        Saya pribadi sudah mencoba paket 4 dan yogurt berry, semua terasa enak. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -346,4 +340,11 @@
         </div>
 
     </div>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
 </body>

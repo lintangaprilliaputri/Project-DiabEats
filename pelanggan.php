@@ -31,7 +31,6 @@
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="artikel.php">Artikel</a></li>
                 <li><a href="review.php">Review</a></li>
-                <li><a href="keluarAkun.php">Keluar</a></li>
             </ul>
 
             <div class="icon">
@@ -39,11 +38,6 @@
             <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="editProfil.php" class="sub-menu-link">
-                            <h3>Edit Profil</h3>
-                            <span>></span>
-                        </a>
-                        <hr>
                         <a href="keluarAkun.php" class="sub-menu-link">
                             <h3>Keluar</h3>
                             <span>></span>
@@ -79,6 +73,12 @@
         </div>
 
     </section>
+    <script>
+        let subMenu = document.getElementById("subMenu");
 
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
 </body>
 </html>
