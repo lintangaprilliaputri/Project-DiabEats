@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+nav .logo img{
+    width: 100px;
+    cursor: pointer;
+    margin: 7px 0;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 17px;
+    transition: 0.1s;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #bd0505;
+    display: block;
+    transition: 0.2s linear;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+nav ul li a:hover{
+    color: #bd0505;
+}
+
+nav .img {
+    width: 100px;
+    height: 100px;
+}
+
+nav .icon img {
+    margin-left: 20px;
+    width: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav .icon img:hover{
+    color: #161616;
+}
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    width: 150px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+.sub-menu {
+    border: 2px solid #BD0505;
+    border-radius: 5px;
+    background:#ffffff ;
+    padding: 10px;
+}
+
+.sub-menu h3 {
+    font-size: 12pt;
+    display: flex;
+    align-items: center;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #303030 ;
+    margin: 10px 0;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #BD0505;
+    margin: 12px 0;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link span {
+    font-size: 10px;
+    transform: 0.5s;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 10vh;
+    
+}

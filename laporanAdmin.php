@@ -75,6 +75,7 @@
 
         nav .icon img {
             width: 20px;
+            cursor: pointer;
             margin-left: 20px;
         }
 
@@ -162,7 +163,6 @@
             <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="keluarAkun.php" class="sub-menu-link">
                             <h3>Keluar</h3>
                             <span>></span>
                         </a>
@@ -175,6 +175,73 @@
         <h2>Laporan Pesanan Masuk</h2>
         <p>Konten untuk mengelola laporan akan ditampilkan di sini.</p>
     </div>
+    <div class="card-body"><canvas id="myAreaChart" width="900" height="400"></canvas></div> 
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+            <div>
+                <div class="card mb-4">
+                    <div class="card-header">
+            </div>
+            <div class="card-body">
+                <canvas id="myChart"></canvas></div>
+            <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+            </div>
+        </div>
+        </main>
+
+        <script>
+            var ctx = document.getElementById("myAreaChart").getContext('2d');
+        var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni"],
+            datasets: [{
+            label: "Jumlah penjualan",
+            lineTension: 0.3, //buat atur line grafik//
+            backgroundColor: "#bd0505",
+            borderColor: "#bd0505",
+            pointRadius: 5, //buat atur point di line grafik//
+            pointBackgroundColor: "#bd0505",
+            pointBorderColor: "#bd0505",
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "#bd0505",
+            pointHitRadius: 50,
+            pointBorderWidth: 5,
+            data: [10,20,5,40,50,60],
+            }],
+        },
+        options: {
+            scales: {
+            xAxes: [{
+                time: {
+                unit: 'date'
+                },
+                gridLines: {
+                display: false
+                },
+                ticks: {
+                maxTicksLimit: 7
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                min: 1,
+                max: 500,
+                },
+                gridLines: {
+                color: "#bd0505",
+                }
+            }],
+            },
+            legend: {
+            display: false
+            }
+        }
+        });
+
+        </script>
+
+    </section>
     <script>
         let subMenu = document.getElementById("subMenu");
 

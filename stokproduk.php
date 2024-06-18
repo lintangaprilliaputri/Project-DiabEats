@@ -154,6 +154,7 @@ $hasil = mysqli_query($conn, $query);
             padding: 10px 25px;
             opacity: 0;
             pointer-events: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: 0.5s ease;
         }
         .popup-info.active {
@@ -176,7 +177,7 @@ $hasil = mysqli_query($conn, $query);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #5e23ff;
+            border-top: 1px solid #BD0505;
             margin-top: 10px;
             padding: 15px 0 7px;
         }
@@ -186,7 +187,7 @@ $hasil = mysqli_query($conn, $query);
             align-items: center;
             width: 130px;
             height: 45px;
-            background-color: #5e23ff;
+            background-color: #BD0505;
             border: 2px solid;
             outline: none;
             border-radius: 6px;
@@ -199,15 +200,15 @@ $hasil = mysqli_query($conn, $query);
         }
         .popup-info .btn-group .info-btn:nth-child(1) {
             background: transparent;
-            color: #5e23ff;
+            color: #BD0505;
         }
         .popup-info .btn-group .info-btn:nth-child(1):hover {
-            background: #5e23ff;
+            background: #BD0505;
             color: white;
         }
         .popup-info .btn-group .info-btn:nth-child(2):hover {
             background: transparent;
-            color: #5e23ff;
+            color: #BD0505;
         }
         .mainn {
             transition: 0.5s ease;
@@ -215,7 +216,7 @@ $hasil = mysqli_query($conn, $query);
         .mainn.active {
             filter: blur(15px);
             transition: 0.5s ease;
-            pointer-events: none;
+            pointer-events: none;
 }
     </style>
 </head>
@@ -230,8 +231,7 @@ $hasil = mysqli_query($conn, $query);
                 <li><a href="admin.php">Beranda</a></li>
                 <li><a href="#Pesanan">Pesanan</a></li>
                 <li><a href="stokproduk.php">Stok Produk</a></li>
-                <li><a href="laporanAdmin.php">Laporan</a></li> 
-                <li><a class="start">Delete</a></li>         
+                <li><a href="laporanAdmin.php">Laporan</a></li>    
             </ul>
             <div class="icon">
                 <img src="image/Pesan.png">
@@ -277,7 +277,7 @@ $hasil = mysqli_query($conn, $query);
                             <td><?php echo $data['satuan']; ?></td>
                             <td>
                                 <a href="ubahproduk.php?id=<?php echo $data['idbarang']; ?>">Edit</a> |
-                                <a href="#" class="start">Delete</a>
+                                <a href="#" class="start" data-id="<?php echo $data['idbarang']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php $nomor++;
@@ -286,17 +286,15 @@ $hasil = mysqli_query($conn, $query);
             </table>  
         </div>
     </div>
-        <div class="popup-info">
-            <form action="" method="POST">
-            <h2 style="font-size:30pt;">PERATURAN GAME</h2>
-            <span class="info">1. Terdapat 10 soal yang telah disediakan.</span>
-            <span class="info">2. Masing-masing soal mempunyai kesempatan 3 kali kesalahan.</span>
-            <span class="info">3. Enjoyy, selamat bermain!.</span>
-            <div class="btn-group">
-                <button class="info-btn exit-btn">Kembali</button>
-                <a href="keluarAkun.php" class="info-btn continue-btn">Mulai</a>
-            </div>
+
+    <div class="popup-info">
+        <h2 style="font-size:14pt;">Apa anda yakin untuk menghapus stok produk?</h2>
+        <div class="btn-group">
+            <button type="button" class="info-btn exit-btn">Tidak</button>
+            <a href="#" id="confirmDelete" class="info-btn continue-btn">Iya</a>
         </div>
-        <script src="popup.js"></script> 
+    </div>
+
+    <script src="popup.js"></script> 
 </body>
 </html>
