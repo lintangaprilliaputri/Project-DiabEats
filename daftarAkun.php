@@ -179,10 +179,9 @@ if (isset($_POST['submit'])) {
         <button type="submit" name="submit" class="btn">Daftar</button>
 
         <div class="login-link">
-                <p>Sudah memiliki akun?
-                <a href="masukAkun.php">Masuk Akun</a></p>
-            </div>
-
-        
+            <p>Sudah memiliki akun?
+            <a href="masukAkun.php">Masuk Akun</a></p>
+        </div>
+ 
     </form>
 </div>

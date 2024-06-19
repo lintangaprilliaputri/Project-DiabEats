@@ -26,7 +26,6 @@
             </ul>
 
             <div class="icon">
-                <img src="image/shop.png">
                 <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
@@ -246,8 +245,8 @@
                 <div class="review_text">
                     <h2 class="name">Margono</h2>
                     <p>
-                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
-                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
+                        Saya telah memesan dan mencoba paket 1 di DiabEats dan makanan yang saya beli ternyata rasanya enak. 
+                        Kedepannya mungkin saya akan berlangganan. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -264,8 +263,8 @@
                     <h2 class="name">Dita</h2>
 
                     <p>
-                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
-                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
+                        Paket yang saya beli yaitu paket 3 rasanya enak dan tidak hambar. 
+                        Mungkin saya akan mencoba paket atau menu lain. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -282,8 +281,8 @@
                     <h2 class="name">Dimas</h2>
 
                     <p>
-                        Saya telah berlangganan di DiabEats dan alhamdulillah saya cocok dengan paket makanannya. 
-                        Makanan yang saya beli rasanya enak serta cocok di lidah saya. Terima kasih DiabEats.
+                        DiabEats ini menunya lumayan bervariasi jadi pembeli dapat mencoba menu berbeda tiap harinya.
+                        Saya pribadi sudah mencoba paket 4 dan yogurt berry, semua terasa enak. Terima kasih DiabEats.
                     </p>
 
                 </div>
@@ -308,32 +307,26 @@
             </div>
 
             <form action="#">
-
                 <div class="input">
                     <p>Nama</p>
                     <input type="text" placeholder="Nama">
                 </div>
-
                 <div class="input">
                     <p>Email</p>
                     <input type="email" placeholder="email">
                 </div>
-
                 <div class="input">
                     <p>Nomor Telepon</p>
                     <input placeholder="Nomor Telepon">
                 </div>
-
                 <div class="input">
                     <p>Jumlah</p>
                     <input type="number" placeholder="Jumlah pesan">
                 </div>
-
                 <div class="input">
                     <p>Pesanan</p>
                     <input placeholder="Nama Pesanan">
                 </div>
-
                 <div class="input">
                     <p>Alamat</p>
                     <input placeholder="Alamat">
@@ -342,9 +335,7 @@
                 <a href="masukAkun.php" class="order_btn">Pesan Sekarang</a>
 
             </form>
-
         </div>
-
     </div>
 
 
@@ -382,9 +373,7 @@
                     </p>
 
                     <div class="team_icon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/bilsarb?igsh=enJhMDBydTJobjdu">bilsarb</a>
+                        <a href="https://www.instagram.com/bilsarb?igsh=enJhMDBydTJobjdu">bilsarb</a>
                     </div>
                 </div>
             </div>
@@ -416,9 +405,7 @@
                     </p>
 
                     <div class="team_icon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/lintangaprilliia?igsh=aTl0NHF4bjl1ZG5z">lintangaprilliia</a>
+                        <a href="https://www.instagram.com/lintangaprilliia?igsh=aTl0NHF4bjl1ZG5z">lintangaprilliia</a>
                     </div>
                 </div>
             </div>
@@ -450,9 +437,7 @@
                     </p>
 
                     <div class="team_icon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/noviacitraf__?igsh=MTF5cXhnMmdteHNjMg==">noviacitraf__</a>
+                        <a href="https://www.instagram.com/noviacitraf__?igsh=MTF5cXhnMmdteHNjMg==">noviacitraf__</a>
                     </div>
                 </div>
             </div>
@@ -498,7 +483,7 @@
 
         </div>
 
-        <p class="end">Hak Cipta<span> kelompok 8</span></p>
+        <p class="end">Copyrights<span>Kelompok 8</span></p>
 
     </footer>
     <script>

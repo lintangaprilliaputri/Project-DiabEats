@@ -48,15 +48,13 @@ if (isset($_SESSION['login'])) {
                 <li><a href="#Home">Beranda</a></li>
                 <li><a href="#Pesanan">Pesanan</a></li>
                 <li><a href="StokProduk.php">Stok Produk</a></li>
-                <li><a href="laporanAdmin.php">Laporan</a></li>
-                <li><a href="keluarAkun.php">Logout</a></li>                
+                <li><a href="laporanAdmin.php">Laporan</a></li>             
             </ul>
             <div class="icon">
-                <img src="image/pesan.png">
                 <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="keluarAkun.php" class="sub-menu-link">
+                        <a href="index.php" class="sub-menu-link">
                             <h3>Keluar</h3>
                             <span>></span>
                         </a>

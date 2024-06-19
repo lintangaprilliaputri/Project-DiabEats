@@ -29,49 +29,16 @@ section nav{
 section nav .logo img{
     width: 100px;
     cursor: pointer;
-    margin: 7px 0;
+    margin-left: 10px;
 }
 
-section nav ul{
-    list-style: none;
-}
-
-section nav ul li{
-    display: inline-block;
-    margin: 0 15px;
-}
-
-section nav ul li a{
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    font-size: 17px;
-    transition: 0.1s;
-}
-
-section nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 2px;
-    background: #bd0505;
-    display: block;
-    transition: 0.2s linear;
-}
-
-section nav ul li a:hover::after{
-    width: 100%;
-}
-
-section nav ul li a:hover{
-    color: #bd0505;
-}
 section nav .img {
     width: 100px;
     height: 100px;
 }
 
 section nav .icon img {
-    margin-left: 20px;
+    margin-left: 40px;
     width: 20px;
 }
 
@@ -95,6 +62,22 @@ section nav .icon i:hover{
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s;
+}
+
+section .main {
+    display: flex;
+    flex: 1; /* Take the remaining height */
+    align-items: center;
+    flex-direction: column; /* Arrange children in a column */
+    text-align: center; /* Center text */
+}
+
+section .main h1 {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: fixed; /* Posisi tetap relatif terhadap jendela browser */
+    left: 40%; /* Jarak dari kiri */
+    top: 100px; /* Jarak dari bawah navigasi */
 }
 
 .sub-menu-wrap.open-menu{

@@ -45,18 +45,11 @@ if (isset($_SESSION['login'])) {
                 <img src="image/logo DiabEats.png">
             </div>
 
-            <ul>
-                <li><a href="#Home">Beranda</a></li>
-                <li><a href="#Laporan">Laporan</a></li>
-                <li><a href="#Promosi">Promosi & Diskon</a></li>
-                <li><a href="keluarAkun.php">Logout</a></li>  
-            </ul>
-
             <div class="icon">
                 <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="#" class="sub-menu-link">
+                        <a href="index.php" class="sub-menu-link">
                             <h3>Keluar</h3>
                             <span>></span>
                         </a>
@@ -64,3 +57,14 @@ if (isset($_SESSION['login'])) {
                 </div>
             </div>
         </nav>
+        <div class="main">
+            <h1>Selamat Datang <?php echo $nama_pengguna; ?></h1>
+        </div>
+    </section>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>

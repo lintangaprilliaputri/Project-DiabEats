@@ -246,7 +246,6 @@
             </ul>
 
             <div class="icon">
-                <img src="image/Shop.png">
                 <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">

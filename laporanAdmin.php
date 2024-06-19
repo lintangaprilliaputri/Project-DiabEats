@@ -155,11 +155,9 @@
             <li><a href="admin.php">Beranda</a></li>
             <li><a href="#Pesanan">Pesanan</a></li>
             <li><a href="stokproduk.php">Stok Produk</a></li>
-            <li><a href="laporanAdmin.php">Laporan</a></li>
-            <li><a href="keluarAkun.php">Logout</a></li>                
+            <li><a href="laporanAdmin.php">Laporan</a></li>        
         </ul>
         <div class="icon">
-            <img src="image/Pesan.png">
             <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">

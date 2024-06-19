@@ -177,7 +177,7 @@ $hasil = mysqli_query($conn, $query);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #BD0505;
+            border-top: 1px solid #5e23ff;
             margin-top: 10px;
             padding: 15px 0 7px;
         }
@@ -187,7 +187,7 @@ $hasil = mysqli_query($conn, $query);
             align-items: center;
             width: 130px;
             height: 45px;
-            background-color: #BD0505;
+            background-color: #5e23ff;
             border: 2px solid;
             outline: none;
             border-radius: 6px;
@@ -200,15 +200,15 @@ $hasil = mysqli_query($conn, $query);
         }
         .popup-info .btn-group .info-btn:nth-child(1) {
             background: transparent;
-            color: #BD0505;
+            color: #5e23ff;
         }
         .popup-info .btn-group .info-btn:nth-child(1):hover {
-            background: #BD0505;
+            background: #5e23ff;
             color: white;
         }
         .popup-info .btn-group .info-btn:nth-child(2):hover {
             background: transparent;
-            color: #BD0505;
+            color: #5e23ff;
         }
         .mainn {
             transition: 0.5s ease;
@@ -216,7 +216,7 @@ $hasil = mysqli_query($conn, $query);
         .mainn.active {
             filter: blur(15px);
             transition: 0.5s ease;
-            pointer-events: none;
+            pointer-events: none;
 }
     </style>
 </head>
@@ -234,7 +234,6 @@ $hasil = mysqli_query($conn, $query);
                 <li><a href="laporanAdmin.php">Laporan</a></li>    
             </ul>
             <div class="icon">
-                <img src="image/Pesan.png">
                 <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
@@ -261,7 +260,6 @@ $hasil = mysqli_query($conn, $query);
                         <th scope="col">Nama Produk</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Stok</th>
-                        <th scope="col">Satuan</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -274,7 +272,6 @@ $hasil = mysqli_query($conn, $query);
                             <td><?php echo $data['nama']; ?></td>
                             <td><?php echo $data['harga']; ?></td>
                             <td><?php echo $data['stok']; ?></td>
-                            <td><?php echo $data['satuan']; ?></td>
                             <td>
                                 <a href="ubahproduk.php?id=<?php echo $data['idbarang']; ?>">Edit</a> |
                                 <a href="#" class="start" data-id="<?php echo $data['idbarang']; ?>">Delete</a>
@@ -288,7 +285,7 @@ $hasil = mysqli_query($conn, $query);
     </div>
 
     <div class="popup-info">
-        <h2 style="font-size:14pt;">Apa anda yakin untuk menghapus stok produk?</h2>
+        <h2 style="font-size:30pt;">Apa anda yakin untuk menghapus stok produk?</h2>
         <div class="btn-group">
             <button type="button" class="info-btn exit-btn">Tidak</button>
             <a href="#" id="confirmDelete" class="info-btn continue-btn">Iya</a>
