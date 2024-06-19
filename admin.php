@@ -36,6 +36,8 @@ if (isset($_SESSION['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman admin</title>
     <link rel="stylesheet" href="styleAdmin.css">
+    <link rel="stylesheet" href="bootstrap\css\bootstrap.css">
+    <script type="text/javascript" src="chartjs/Chart.js"></script>
 </head>
 <body>
     <section>
@@ -45,10 +47,8 @@ if (isset($_SESSION['login'])) {
             </div>
 
             <ul>
-                <li><a href="#Home">Beranda</a></li>
-                <li><a href="#Pesanan">Pesanan</a></li>
-                <li><a href="StokProduk.php">Stok Produk</a></li>
-                <li><a href="laporanAdmin.php">Laporan</a></li>             
+                <li><a href="#pesanan">Pesanan</a></li>
+                <li><a href="StokProduk.php">Stok Produk</a></li>       
             </ul>
             <div class="icon">
                 <img src="image/Profil.png" onclick="toggleMenu()">
@@ -66,6 +66,104 @@ if (isset($_SESSION['login'])) {
             <h1>Selamat Datang <?php echo $nama_pengguna; ?></h1>
         </div>
     </section>
+
+    <?php
+    $query = "SELECT idpesanan, produk, harga, jumlah, total, tipe, nama_user, email, notelp, alamat FROM tb_pesanan";
+    $result = mysqli_query($conn, $query);
+
+    $pesanan_data = array();
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $pesanan_data[] = $row;
+        }
+    }
+    ?>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Data Pesanan</h1>
+
+        <!-- Chart -->
+    <canvas id="pesananChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('pesananChart').getContext('2d');
+            var pesananData = <?php echo json_encode($pesanan_data); ?>;
+            var produkLabels = pesananData.map(function(e) {
+                return e.produk;
+            });
+            var jumlahData = pesananData.map(function(e) {
+                return e.jumlah;
+            });
+
+            var chart = new Chart(ctx, {
+                type: '',
+                data: {
+                    labels: produkLabels,
+                    datasets: [{
+                        label: 'Jumlah Pesanan',
+                        data: jumlahData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
+        
+        <!-- Tabel Bootstrap -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID Pesanan</th>
+                    <th>Produk</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
+                    <th>Total</th>
+                    <th>Tipe</th>
+                    <th>Nama User</th>
+                    <th>Email</th>
+                    <th>No Telp</th>
+                    <th>Alamat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if(!empty($pesanan_data)) { ?>
+                    <?php foreach($pesanan_data as $pesanan) { ?>
+                        <tr>
+                            <td><?php echo $pesanan['idpesanan']; ?></td>
+                            <td><?php echo $pesanan['produk']; ?></td>
+                            <td><?php echo $pesanan['harga']; ?></td>
+                            <td><?php echo $pesanan['jumlah']; ?></td>
+                            <td><?php echo $pesanan['total']; ?></td>
+                            <td><?php echo $pesanan['tipe']; ?></td>
+                            <td><?php echo $pesanan['nama_user']; ?></td>
+                            <td><?php echo $pesanan['email']; ?></td>
+                            <td><?php echo $pesanan['notelp']; ?></td>
+                            <td><?php echo $pesanan['alamat']; ?></td>
+                        </tr>
+                    <?php } ?>
+                <?php } else { ?>
+                    <tr>
+                        <td colspan="10" class="text-center">Tidak ada data</td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+        
+
     <script>
         let subMenu = document.getElementById("subMenu");
         

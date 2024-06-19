@@ -29,11 +29,12 @@ if ($stok >= $jumlah) {
     $hasil = mysqli_query($conn, $query);
 
     if ($hasil) {
-        header('location:pelanggan.php');
+        header('location:prosesbeli.php?status=success');
     } else {
-        echo "Input data gagal";
+        header('location:prosesbeli.php?status=failure');
     }
 } else {
-    echo "Error: Stok tidak mencukupi.";
+    header('location:prosesbeli.php?status=outofstock');
 }
+exit();
 ?>

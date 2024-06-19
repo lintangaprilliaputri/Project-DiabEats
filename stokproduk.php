@@ -177,7 +177,7 @@ $hasil = mysqli_query($conn, $query);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #5e23ff;
+            border-top: 1px solid #bd0505;
             margin-top: 10px;
             padding: 15px 0 7px;
         }
@@ -187,7 +187,7 @@ $hasil = mysqli_query($conn, $query);
             align-items: center;
             width: 130px;
             height: 45px;
-            background-color: #5e23ff;
+            background-color: #bd0505;
             border: 2px solid;
             outline: none;
             border-radius: 6px;
@@ -200,23 +200,22 @@ $hasil = mysqli_query($conn, $query);
         }
         .popup-info .btn-group .info-btn:nth-child(1) {
             background: transparent;
-            color: #5e23ff;
+            color: #bd0505;
         }
         .popup-info .btn-group .info-btn:nth-child(1):hover {
-            background: #5e23ff;
+            background: #bd0505;
             color: white;
         }
         .popup-info .btn-group .info-btn:nth-child(2):hover {
             background: transparent;
-            color: #5e23ff;
+            color: #bd0505;
         }
         .mainn {
             transition: 0.5s ease;
         }
         .mainn.active {
-            filter: blur(15px);
             transition: 0.5s ease;
-            pointer-events: none;
+            pointer-events:none;
 }
     </style>
 </head>
@@ -228,10 +227,8 @@ $hasil = mysqli_query($conn, $query);
                 <img src="image/logo DiabEats.png" alt="Logo">
             </div>
             <ul>
-                <li><a href="admin.php">Beranda</a></li>
-                <li><a href="#Pesanan">Pesanan</a></li>
-                <li><a href="stokproduk.php">Stok Produk</a></li>
-                <li><a href="laporanAdmin.php">Laporan</a></li>    
+                <li><a href="admin.php">Pesanan</a></li>
+                <li><a href="stokproduk.php">Stok Produk</a></li>  
             </ul>
             <div class="icon">
                 <img src="image/Profil.png" onclick="toggleMenu()">
@@ -251,7 +248,7 @@ $hasil = mysqli_query($conn, $query);
                 <h3>DATA STOK PRODUK DIABEATS </h3>
             </div>
             <a href="tambahproduk.php" class="btn btn-primary mb-1mt-1">Tambah Produk</a>
-            <a href="stokprodukPDF.php" target="_blank" class="btn btn-success"> PRINT</a>
+            <a href="stokprodukPDF.php" target="_blank" class="btn btn-success"> PRINT LAPORAN</a>
             <br><table class="table table-striped"><br>
                 <thead class="thead-light">
                     <tr>

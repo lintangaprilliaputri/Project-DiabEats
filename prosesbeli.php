@@ -52,43 +52,44 @@ $produk = mysqli_fetch_assoc($result);
 
             document.getElementById('totalPembayaran').value = totalPembayaran;
         }
+
+        window.onload = checkStatus;
     </script>
 </head>
 <body>
     <section id="Home">
-            <nav>
-                <div class="logo">
-                    <img src="image/logo DiabEats.png">
-                </div>
-
-                <ul>
-                    <li><a href="pelanggan.php">Beranda</a></li>
-                    <li><a href="menu.php">Menu</a></li>
-                    <li><a href="artikel.php">Artikel</a></li>
-                    <li><a href="review.php">Review</a></li>
-                </ul>
-
-                <div class="icon">
+        <nav>
+            <div class="logo">
+                <img src="image/logo DiabEats.png">
+            </div>
+            <ul>
+                <li><a href="pelanggan.php">Beranda</a></li>
+                <li><a href="menu.php">Menu</a></li>
+                <li><a href="artikel.php">Artikel</a></li>
+                <li><a href="review.php">Review</a></li>
+            </ul>
+            <div class="icon">
                 <img src="image/profil.png" onclick="toggleMenu()">
-                    <div class="sub-menu-wrap" id="subMenu">
-                        <div class="sub-menu">
-                            <a href="index.php" class="sub-menu-link">
-                                <h3>Keluar</h3>
-                                <span>></span>
-                            </a>
-                        </div>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <a href="index.php" class="sub-menu-link">
+                            <h3>Keluar</h3>
+                            <span>></span>
+                        </a>
                     </div>
                 </div>
-            </nav>
-        </section>
+            </div>
+        </nav>
+    </section>
+
     <section class="registration">
         <div class="register-form">
             <h1>Silahkan <span>ISI</span></h1>
             <form action="prosespembelian.php" method="POST" onsubmit="return validateStock()">
                 <p>Nama Produk</p>
-                <input  type="text" value="<?php echo $produk['nama'] ?>" required="Requiered" name="NamaProduk" readonly>
+                <input type="text" value="<?php echo $produk['nama'] ?>" required="Requiered" name="NamaProduk" readonly>
                 <p>Harga</p>
-                <input  type="text" id="hargaPerProduk" value="<?php echo $produk['harga'] ?>" required="Requiered" name="harga" readonly>
+                <input type="text" id="hargaPerProduk" value="<?php echo $produk['harga'] ?>" required="Requiered" name="harga" readonly>
                 <p>Jumlah Pesanan</p>
                 <input type="number" id="jumlah" name="jumlah" required="Requiered" oninput="calculateTotal()">
                 <p>Total Pembayaran</p>
@@ -99,46 +100,41 @@ $produk = mysqli_fetch_assoc($result);
 
                 <h4>Masukkan Data</h4>
                 <p>Nama </p>
-                <input  type="text" required="Requiered" name="namaUser">
+                <input type="text" required="Requiered" name="namaUser">
                 <p>Email</p>
-                <input  type="text" required="Requiered" name="email">
+                <input type="text" required="Requiered" name="email">
                 <p>No Telp</p>
                 <input type="text" name="notelp" required="Requiered">
                 <p>Alamat</p>
                 <input type="text" required="Requiered" name="alamat"><br>
 
                 <input type="hidden" id="stok" value="<?php echo $stok; ?>">
-                <input type="submit" value="Checkout" name="Submit" class="submitbtn">
+                <input type="submit" class="start" value="Checkout" name="Submit" class="submitbtn">
             </form>
         </div>
     </section>
 
-    <?php $nomor = 1;
-        while ($data = mysqli_fetch_array($hasil)) { ?>
-                <tr>
-                    <th scope="row"><?php echo $nomor; ?></th>
-                    <td><?php echo $data['idbarang']; ?></td>
-                    <td><?php echo $data['nama']; ?></td>
-                    <td><?php echo $data['harga']; ?></td>
-                    <td><?php echo $data['stok']; ?></td>
-                    <td>
-                        <a href="pelanggan.php" class="start" data-id="<?php echo $data['idbarang']; ?>">Kembali</a>
-                    </td>
-                </tr>
-        <?php $nomor++;
-    } ?>
-
-    <div class="popup-info">
-        <h2 style="font-size:20pt;">Terima Kasih</h2>
-        <h4 style="font-size: 8pt;">Pesanan Anda Akan Segera di Proses</h4>
+    <div class="popup-info" id="popup-info">
+        <h2 style="font-size:30pt;">Terima Kasih</h2>
+        <h4 style="font-size: 20pt;">Pesanan Anda Akan Segera di Proses!</h4>
         <div class="btn-group">
-            <a href="#" id="confirmBack" class="info-btn continue-btn">Kembali</a>
+            <a href="pelanggan.php" id="confirmBack" class="info-btn continue-btn">Kembali</a>
         </div>
     </div>
 
-    <script src="popupcheckout.js"></script> 
-
     <script>
+        function calculateTotal() {
+            var jumlahBeli = document.getElementById('jumlah').value;
+            var hargaPerProduk = document.getElementById('hargaPerProduk').value;
+
+            jumlahBeli = parseInt(jumlahBeli);
+            hargaPerProduk = parseInt(hargaPerProduk);
+
+            var totalPembayaran = jumlahBeli * hargaPerProduk;
+
+            document.getElementById('totalPembayaran').value = totalPembayaran;
+        }
+
         function validateStock() {
             var stok = document.getElementById('stok').value;
             var jumlahBeli = document.getElementById('jumlah').value;
@@ -150,6 +146,20 @@ $produk = mysqli_fetch_assoc($result);
 
             return true;
         }
+
+        function checkStatus() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            if (status === 'success') {
+                document.querySelector('.popup-info').style.display = 'block';
+            } else if (status === 'failure') {
+                alert("Input data gagal.");
+            } else if (status === 'outofstock') {
+                alert("Stok tidak mencukupi.");
+            }
+        }
+
+        window.onload = checkStatus;
     </script>
 </body>
 </html>

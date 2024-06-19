@@ -67,7 +67,7 @@
         </p>
 
         <div class="main_btn">
-            <a href="#">Pesan Sekarang</a>
+            <a href="menu.php">Pesan Sekarang</a>
             <img src="image/panah kanan.png">
         </div>
 

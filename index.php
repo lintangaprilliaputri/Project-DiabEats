@@ -447,45 +447,9 @@
     <!--Footer-->
 
     <footer>
-        <div class="footer_main">
-
-            <div class="footer_tag">
-                <h2>Quick Link</h2>
-                <p>Beranda</p>
-                <p>Tentang</p>
-                <p>Menu</p>
-                <p>Artikel</p>
-                <p>Review</p>
-                <p>Pesan</p>
-            </div>
-
-            <div class="footer_tag">
-                <h2>Contact</h2>
-                <p>+6281357188845</p>
-                <p>diabeats@gmail.com</p>
-                <p>bilqisbillah@gmail.com</p>
-            </div>
-
-            <div class="footer_tag">
-                <h2>Our Service</h2>
-                <p>Pengiriman Cepat</p>
-                <p>Pembayaran Mudah</p>
-                <p>Layanan 12 Jam</p>
-            </div>
-
-            <div class="footer_tag">
-                <h2>Follows</h2>
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-
-        </div>
-
         <p class="end">Copyrights<span>Kelompok 8</span></p>
-
     </footer>
+    
     <script>
         let subMenu = document.getElementById("subMenu");
 
