@@ -37,7 +37,7 @@ if (isset($_SESSION['login'])) {
     <title>Halaman admin</title>
     <link rel="stylesheet" href="styleAdmin.css">
     <link rel="stylesheet" href="bootstrap\css\bootstrap.css">
-    <script type="text/javascript" src="chartjs/Chart.js"></script>
+    <script type="text/javascript" src="Chartjs/Chart.js"></script>
 </head>
 <body>
     <section>
@@ -62,11 +62,12 @@ if (isset($_SESSION['login'])) {
                 </div>
             </div>
         </nav>
-        <div class="main">
-            <h1>Selamat Datang <?php echo $nama_pengguna; ?></h1>
-        </div>
-    </section>
 
+    </section>
+    <br><br><br><br>
+    <div class="main">
+        <h1>Selamat Datang <?php echo $nama_pengguna; ?></h1>
+    </div>
     <?php
     $query = "SELECT idpesanan, produk, harga, jumlah, total, tipe, nama_user, email, notelp, alamat FROM tb_pesanan";
     $result = mysqli_query($conn, $query);
@@ -84,7 +85,8 @@ if (isset($_SESSION['login'])) {
         <h1 class="mb-4">Data Pesanan</h1>
 
         <!-- Chart -->
-    <canvas id="pesananChart" width="400" height="200"></canvas>
+    <div style="width: 800px;margin: 0px auto;">
+        <canvas id="pesananChart" width="400" height="200"></canvas>
     </div>
 
     <script>
@@ -99,7 +101,7 @@ if (isset($_SESSION['login'])) {
             });
 
             var chart = new Chart(ctx, {
-                type: '',
+                type: 'bar',
                 data: {
                     labels: produkLabels,
                     datasets: [{

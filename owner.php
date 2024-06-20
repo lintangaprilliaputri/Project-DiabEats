@@ -41,7 +41,7 @@ if (isset($_SESSION['login'])) {
 </head>
 <body>
 
-    <section id="Home">
+    <section>
         <nav>
             <div class="logo">
                 <img src="image/logo DiabEats.png">
@@ -59,6 +59,7 @@ if (isset($_SESSION['login'])) {
                 </div>
             </div>
         </nav>
+        <br><br><br><br>
         <div class="main">
             <h1>Selamat Datang <?php echo $nama_pengguna; ?></h1>
         </div>
@@ -78,7 +79,8 @@ if (isset($_SESSION['login'])) {
     ?>
 
        <!-- Chart -->
-       <canvas id="pesananChart" width="400" height="200"></canvas>
+    <div style="width: 800px;margin: 0px auto;">
+       <canvas id="pesananChart"></canvas>
     </div>
 
     <script>
