@@ -84,7 +84,7 @@ $produk = mysqli_fetch_assoc($result);
 
     <section class="registration">
         <div class="register-form">
-            <h1>Silahkan <span>ISI</span></h1>
+            <h1>Form<span> Pemesanan</span></h1>
             <form action="prosespembelian.php" method="POST" onsubmit="return validateStock()">
                 <p>Nama Produk</p>
                 <input type="text" value="<?php echo $produk['nama'] ?>" required="Requiered" name="NamaProduk" readonly>

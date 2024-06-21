@@ -227,8 +227,9 @@ $hasil = mysqli_query($conn, $query);
                 <img src="image/logo DiabEats.png" alt="Logo">
             </div>
             <ul>
+                <li><a href="BerandaAdm.php">Beranda</a></li>
                 <li><a href="admin.php">Pesanan</a></li>
-                <li><a href="stokproduk.php">Stok Produk</a></li>  
+                <li><a href="StokProduk.php">Stok Produk</a></li>
             </ul>
             <div class="icon">
                 <img src="image/Profil.png" onclick="toggleMenu()">

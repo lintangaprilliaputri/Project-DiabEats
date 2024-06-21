@@ -7,8 +7,19 @@ include 'koneksi.php'; // Pastikan file koneksi.php ada dan berisi kode koneksi 
 $pdf = new FPDF('P', 'mm', 'A4');
 $pdf->AddPage();
 
+// Mendapatkan tanggal dan waktu saat ini dalam format WIB
+date_default_timezone_set('Asia/Jakarta');
+$currentDate = date('d-m-Y');
+$currentTime = date('H:i:s');
+
 $pdf->SetFont('Times', 'B', 13);
-$pdf->Cell(200, 10, 'DATA PESANAN PRODUK DIABEATS', 0, 0, 'C');
+$pdf->Cell(190, 10, 'DATA PESANAN PRODUK DIABEATS', 0, 1, 'C'); // Mengatur lebar cell menjadi 190 untuk menyesuaikan margin
+
+$pdf->SetFont('Times', 'B', 10);
+
+// Tambahkan dua Cell untuk tanggal dan waktu agar sejajar dalam satu baris
+$pdf->Cell(95, 10, 'Tanggal: ' . $currentDate, 0, 0, 'L'); // Lebar cell 95
+$pdf->Cell(95, 10, 'Waktu: ' . $currentTime . ' WIB', 0, 1, 'R'); // Lebar cell 95 dan baris baru
 
 $pdf->Cell(10, 15, '', 0, 1);  //atur lebar tinggi cell
 $pdf->SetFont('Times', 'B', 9);

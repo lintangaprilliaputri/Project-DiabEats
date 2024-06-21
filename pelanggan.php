@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Pelanggan</title>
+    <title>Halaman Pelanggan</title>
     <link rel="stylesheet" href="stylePelanggan.css">
 
 </head>
@@ -37,7 +37,7 @@
             <img src="image/Profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <a href="keluarAkun.php" class="sub-menu-link">
+                        <a href="index.php" class="sub-menu-link">
                             <h3>Keluar</h3>
                             <span>></span>
                         </a>

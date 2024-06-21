@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
         if (password_verify($pass, $data['password'])) {
             $_SESSION['login'] = $data['username'];
             if ($data['username'] === "admin01" || $data['username'] === "admin02") {
-                header("location: admin.php");
+                header("location: BerandaAdm.php");
                 exit();
             } if ($data['username'] === "owner") {
                 // user bukan admin, diarahkan ke halaman owner

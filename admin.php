@@ -34,7 +34,7 @@ if (isset($_SESSION['login'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman admin</title>
+    <title>Halaman Admin</title>
     <link rel="stylesheet" href="styleAdmin.css">
     <link rel="stylesheet" href="bootstrap\css\bootstrap.css">
     <script type="text/javascript" src="Chartjs/Chart.js"></script>
@@ -47,8 +47,9 @@ if (isset($_SESSION['login'])) {
             </div>
 
             <ul>
-                <li><a href="#pesanan">Pesanan</a></li>
-                <li><a href="StokProduk.php">Stok Produk</a></li>       
+                <li><a href="BerandaAdm.php">Beranda</a></li>
+                <li><a href="admin.php">Pesanan</a></li>
+                <li><a href="StokProduk.php">Stok Produk</a></li>
             </ul>
             <div class="icon">
                 <img src="image/Profil.png" onclick="toggleMenu()">
@@ -65,9 +66,7 @@ if (isset($_SESSION['login'])) {
 
     </section>
     <br><br><br><br>
-    <div class="main">
-        <h1>Selamat Datang <?php echo $nama_pengguna; ?></h1>
-    </div>
+    
     <?php
     $query = "SELECT idpesanan, produk, harga, jumlah, total, tipe, nama_user, email, notelp, alamat FROM tb_pesanan";
     $result = mysqli_query($conn, $query);
@@ -81,50 +80,8 @@ if (isset($_SESSION['login'])) {
     }
     ?>
 
-    <div class="container mt-5">
-        <h1 class="mb-4">Data Pesanan</h1>
-
-        <!-- Chart -->
-    <div style="width: 800px;margin: 0px auto;">
-        <canvas id="pesananChart" width="400" height="200"></canvas>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var ctx = document.getElementById('pesananChart').getContext('2d');
-            var pesananData = <?php echo json_encode($pesanan_data); ?>;
-            var produkLabels = pesananData.map(function(e) {
-                return e.produk;
-            });
-            var jumlahData = pesananData.map(function(e) {
-                return e.jumlah;
-            });
-
-            var chart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: produkLabels,
-                    datasets: [{
-                        label: 'Jumlah Pesanan',
-                        data: jumlahData,
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        });
-    </script>
-        
+<div class="container mt-5">
+<h1 class="mb-4">Data Pesanan</h1>
         <!-- Tabel Bootstrap -->
         <table class="table table-striped">
             <thead>

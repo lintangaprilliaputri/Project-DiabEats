@@ -2,27 +2,41 @@
 include_once("koneksi.php");
 session_start();
 
+$sql = "SELECT idbarang, nama, harga, deskripsi, gambar, stok FROM tb_stokproduk";
+$result = $conn->query($sql);
+$produk = array();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $produk[$row['idbarang']] = $row;
+    }
+}
+
 if (isset($_POST['Login'])) {
     if (isset($_POST['nama'])) {
         $id = $_POST['nama'];
         // Lakukan pembersihan atau validasi input $id sebelum digunakan dalam query SQL
+        $id = mysqli_real_escape_string($conn, $id);
 
         $cek_id = mysqli_query($conn, "SELECT * FROM tb_stokproduk WHERE idbarang = '$id'");
 
         if (mysqli_num_rows($cek_id) === 1) {
             $data = mysqli_fetch_assoc($cek_id);
             $produk = $data['nama'];
-            // Set session dengan data wisata yang ditemukan
+            // Set session dengan data produk yang ditemukan
             $_SESSION['produk'] = $id;
             header("location: prosesbeli.php");
             exit();
         } else {
-            echo "Produk tidak ditemukan"; // Tambahkan pesan kesalahan jika wisata tidak ditemukan
+            echo "Produk tidak ditemukan"; // Tambahkan pesan kesalahan jika produk tidak ditemukan
         }
     } else {
         echo "ID produk tidak ditemukan dalam permintaan";
     }
 }
+
+// Ambil semua data produk dari database
+$produk_query = mysqli_query($conn, "SELECT * FROM tb_stokproduk");
+$produk_list = mysqli_fetch_all($produk_query, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +49,6 @@ if (isset($_POST['Login'])) {
     <title>DiabEats</title>
 </head>
 <body>
-    
     <section id="Home">
         <nav>
             <div class="logo">
@@ -50,7 +63,7 @@ if (isset($_POST['Login'])) {
             </ul>
 
             <div class="icon">
-            <img src="image/profil.png" onclick="toggleMenu()">
+                <img src="image/profil.png" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
                         <a href="keluarAkun.php" class="sub-menu-link">
@@ -66,151 +79,20 @@ if (isset($_POST['Login'])) {
     <div class="menu" id="Menu">
         <form id="orderForm" action="menu.php" method="POST">
             <h1>Our<span>Menu</span></h1>
-
             <div class="menu_box">
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/paket1.png">
+                <?php foreach ($produk_list as $produk): ?>
+                    <div class="menu_card">
+                        <div class="menu_image">
+                            <img src="image.php?id=<?php echo htmlspecialchars($produk['idbarang']); ?>" alt="<?php echo htmlspecialchars($produk['nama']); ?>">
+                        </div>
+                        <div class="menu_info">
+                            <h2><?php echo $produk['nama']; ?></h2>
+                            <p><?php echo $produk['deskripsi']; ?></p>
+                            <h3>Rp <?php echo number_format($produk['harga'], 0, ',', '.'); ?></h3>
+                        </div>
+                        <input type="button" class="btn-order" onclick="checkStockAndSubmit('<?php echo $produk['idbarang']; ?>', '<?php echo $produk['stok']; ?>')" value="Beli Sekarang">
                     </div>
-                    <div class="menu_info">
-                        <h2>Paket 1</h2>
-                        <p>Salad sayur dengan campuran telur rebus serta edamame dan almond yang lezat</p>
-                        <h3>Rp 45.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('1')" value="Beli Sekarang">
-                </div> 
-                
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/paket2.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Paket 2</h2>
-                        <p>Mie goreng dengan topping chicken pop dan jus apel yang segar</p>
-                        <h3>Rp 25.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('8')" value="Beli Sekarang">
-                </div> 
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/paket3.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Paket 3</h2>
-                        <p>Omelet tahu sayur yang gurih dan enak dengan porsi yang mengenyangkan</p>
-                        <h3>Rp 20.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('12')" value="Beli Sekarang">
-                </div> 
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/paket4.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Paket 4</h2>
-                        <p>Sayur lodeh dengan kentang rebus serta bubur kacang merah</p>
-                        <h3>Rp 40.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('14')" value="Beli Sekarang">
-                </div>
-                
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/buburkacang.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Bubur Kacang Merah</h2>
-                        <p>Bubur dengan bahan dasar kacang merah tinggi serat</p>
-                        <h3>Rp 10.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('16')" value="Beli Sekarang">
-                </div>
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/pudding.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Pudding Jagung</h2>
-                        <p>Pudding jagung rendah kandungan glikemik</p>
-                        <h3>Rp 7.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('18')" value="Beli Sekarang">
-                </div>
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/yogurt.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Yogurt berry</h2>
-                        <p>Yogurt dengan topping strawberry dan blueberry</p>
-                        <h3>Rp 12.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('20')" value="Beli Sekarang">
-                </div>
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/susu.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Susu</h2>
-                        <p>Susu dengan kandungan lemak yang rendah</p>
-                        <h3>Rp 50.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('22')" value="Beli Sekarang">
-                </div>
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/kombucha.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Kombucha</h2>
-                        <p>Teh fermentasi yang mengandung berbagai zat baik</p>
-                        <h3>Rp 20.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('23')" value="Beli Sekarang">
-                </div>
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/infusedwater.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Infused Water</h2>
-                        <p>Air mineral dengan rendaman buah, sayur, atau rempah-rempah</p>
-                        <h3>Rp 15.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('24')" value="Beli Sekarang">
-                </div>
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/jusjeruk.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Jus Apel</h2>
-                        <p>Jus apel yang mengandung beberapa antioksidan</p>
-                        <h3>Rp 10.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('25')" value="Beli Sekarang">
-                </div>
-
-                <div class="menu_card">
-                    <div class="menu_image">
-                        <img src="image/jusalpukat.png">
-                    </div>
-                    <div class="menu_info">
-                        <h2>Smoothies</h2>
-                        <p>Smoothies dengan kandungan bayam dan apel</p>
-                        <h3>Rp 15.000</h3>
-                    </div>
-                    <input type="button" class="btn-order" onclick="setNamaAndSubmit('26')" value="Beli Sekarang">
-                </div>
+                <?php endforeach; ?>
             </div>
             <input type="hidden" name="nama" id="nama_input">
             <input type="hidden" name="Login" value="true">
@@ -224,9 +106,13 @@ if (isset($_POST['Login'])) {
             subMenu.classList.toggle("open-menu");
         }
 
-        function setNamaAndSubmit(produk) {
-            document.getElementById('nama_input').value = produk;
-            document.getElementById('orderForm').submit();
+        function checkStockAndSubmit(produk, stok) {
+            if (stok == 0) {
+                alert("Produk ini tidak tersedia, Harap memilih produk lain.");
+            } else {
+                document.getElementById('nama_input').value = produk;
+                document.getElementById('orderForm').submit();
+            }
         }
     </script>
 </body>
